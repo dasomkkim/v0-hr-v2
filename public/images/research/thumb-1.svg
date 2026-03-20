@@ -1,0 +1,19 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g1a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 180) rotate(36) scale(460 380)">
+      <stop stop-color="#F472B6"/><stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g1b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(700 700) rotate(-18) scale(520 420)">
+      <stop stop-color="#FB923C"/><stop offset="1" stop-color="#FB923C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1c" x1="120" y1="40" x2="840" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/><stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" rx="44" fill="url(#g1c)"/>
+  <rect width="900" height="900" rx="44" fill="url(#g1a)"/>
+  <rect width="900" height="900" rx="44" fill="url(#g1b)"/>
+  <rect x="310" y="310" width="280" height="280" rx="36" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" stroke-opacity="0.45"/>
+  <path d="M390 450H510" stroke="white" stroke-width="14" stroke-linecap="round"/>
+  <path d="M450 390V510" stroke="white" stroke-width="14" stroke-linecap="round"/>
+</svg>

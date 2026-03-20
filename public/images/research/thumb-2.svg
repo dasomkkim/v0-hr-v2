@@ -1,0 +1,14 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g2a" x1="80" y1="40" x2="840" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4338CA"/><stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <radialGradient id="g2b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(740 220) rotate(145) scale(420 320)">
+      <stop stop-color="#C4B5FD"/><stop offset="1" stop-color="#C4B5FD" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" rx="44" fill="url(#g2a)"/>
+  <rect width="900" height="900" rx="44" fill="url(#g2b)"/>
+  <text x="118" y="478" fill="white" font-family="Pretendard, Inter, sans-serif" font-size="72" font-weight="700">ASTRA AI</text>
+  <text x="118" y="552" fill="white" font-family="Pretendard, Inter, sans-serif" font-size="60" font-weight="700">Trust Framework</text>
+</svg>
