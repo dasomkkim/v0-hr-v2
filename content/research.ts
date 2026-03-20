@@ -1,10 +1,10 @@
-export const categoryTabs = ['전체', '타당도 검증', 'AI 윤리', 'HR 트렌드', '기술 백서'] as const
+export const categoryTabs = ['전체', '타당도 검증', '빙산 모형 시각화', '역량 매핑 엔진', '데이터 기반 구조화 면접'] as const
 export type CategoryTab = (typeof categoryTabs)[number]
 
 export const sideArticles = [
-  { title: '생성형 AI 편향성 제거 효과', date: 'Feb 14', image: '/images/research/thumb-7.svg', category: 'AI 윤리' },
-  { title: '설명가능한 평가모델 신뢰도 프레임', date: 'Feb 09', image: '/images/research/thumb-8.svg', category: '기술 백서' },
-  { title: '실시간 역량모델 업데이트 성과', date: 'Feb 01', image: '/images/research/thumb-9.svg', category: 'HR 트렌드' },
+  { title: 'Can Do·Will Do 분리 평가의 예측력 차이', date: 'Feb 14', image: '/images/research/thumb-7.svg', category: '빙산 모형 시각화' },
+  { title: '심리검사 기반 BEI 질문 자동 생성 결과', date: 'Feb 09', image: '/images/research/thumb-8.svg', category: '데이터 기반 구조화 면접' },
+  { title: 'BARS 도입 후 평가자 간 신뢰도 변화', date: 'Feb 01', image: '/images/research/thumb-9.svg', category: '역량 매핑 엔진' },
 ] as const
 
 export const archiveArticles = [
@@ -17,44 +17,52 @@ export const archiveArticles = [
     category: '타당도 검증',
   },
   {
-    tag: 'AI 윤리',
-    title: '면접 자동화의 공정성 편향 점검 체크리스트',
-    desc: 'AI 도입 시 필수 점검 항목과 리스크 대응 프로토콜을 정리한 가이드입니다.',
+    tag: '빙산 모형 시각화',
+    title: 'Can Do vs Will Do: 역량 평가를 나누는 기준',
+    desc: '표면적 능력(스킬·지식)과 수면 아래 동기·기질을 분리해야 하는 이유와 측정 방법을 설명합니다.',
     date: '2025.11.30',
     image: '/images/research/thumb-2.svg',
-    category: 'AI 윤리',
+    category: '빙산 모형 시각화',
   },
   {
-    tag: '기술 백서',
-    title: '행동 시뮬레이션 기반 역량 추론 아키텍처',
-    desc: '현업 적용 가능한 모델 구조와 파이프라인 설계를 상세히 설명합니다.',
+    tag: '빙산 모형 시각화',
+    title: '빙산 모형으로 이해하는 고성과자의 숨겨진 DNA',
+    desc: '성과 상위 5%를 구분하는 건 능력이 아닌 기질이었습니다. 25년 추적 데이터가 보여주는 패턴을 공개합니다.',
     date: '2025.11.12',
     image: '/images/research/thumb-3.svg',
-    category: '기술 백서',
+    category: '빙산 모형 시각화',
   },
   {
-    tag: 'HR 트렌드',
-    title: '고성과자 온보딩 패턴의 변화와 시사점',
-    desc: '최근 3년간 온보딩 데이터 변화와 성과 연계 신호를 비교했습니다.',
+    tag: '역량 매핑 엔진',
+    title: '전략 목표에서 BARS까지: 역량 번역 4단계 프로세스',
+    desc: '조직의 비전이 어떻게 구체적 행동 지표(BARS)로 번역되는지, 단계별 설계 프로세스를 상세히 설명합니다.',
     date: '2025.10.21',
     image: '/images/research/thumb-4.svg',
-    category: 'HR 트렌드',
+    category: '역량 매핑 엔진',
   },
   {
-    tag: 'AI 윤리',
-    title: '생성형 AI 면접관의 책임성 프레임워크',
-    desc: '설명 책임, 데이터 출처, 평가 투명성을 위한 운영 기준을 제안합니다.',
+    tag: '역량 매핑 엔진',
+    title: '행동 기준 평가척도(BARS) 실전 설계 가이드',
+    desc: '평가자 간 신뢰도를 높이는 BARS 문항 작성법과 역량별 행동 앵커 예시를 제공합니다.',
     date: '2025.10.10',
     image: '/images/research/thumb-5.svg',
-    category: 'AI 윤리',
+    category: '역량 매핑 엔진',
   },
   {
-    tag: '기술 백서',
-    title: '다중 신호 융합을 통한 역량 스코어링 방법론',
-    desc: '인터뷰, 시뮬레이션, 성과데이터를 결합하는 계산 접근을 다룹니다.',
+    tag: '데이터 기반 구조화 면접',
+    title: '심리검사 결과를 면접 질문으로 변환하는 방법',
+    desc: '검사 결과의 취약 역량 신호가 면접관의 BEI 질문 가이드로 자동 변환되는 파이프라인을 시각화합니다.',
     date: '2025.09.28',
     image: '/images/research/thumb-6.svg',
-    category: '기술 백서',
+    category: '데이터 기반 구조화 면접',
+  },
+  {
+    tag: '데이터 기반 구조화 면접',
+    title: 'BEI 자동화: 데이터가 만드는 맞춤형 면접 가이드',
+    desc: '후보자별 심리검사 프로파일을 기반으로 개인화된 구조화 면접 질문셋이 생성되는 구조를 설명합니다.',
+    date: '2025.09.10',
+    image: '/images/research/thumb-1.svg',
+    category: '데이터 기반 구조화 면접',
   },
 ] as const
 

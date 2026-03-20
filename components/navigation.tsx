@@ -10,7 +10,7 @@ const navLinks = [
   { label: "아스트라", href: "/solutions" },
   { label: "리서치", href: "/research" },
   { label: "HR컨설팅", href: "/education" },
-  { label: "프로젝트 사례", href: "/cases" },
+  // { label: "프로젝트 사례", href: "/cases" },
 ]
 
 export function Navigation() {

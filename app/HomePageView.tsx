@@ -477,37 +477,23 @@ function QuantumParticleCanvas() {
 }
 
 function SpotlightRevealSection() {
-  const [spot, setSpot] = useState({ x: 50, y: 50, active: false })
-
-  const points = [
+  const cards = [
     {
-      title: '측정 대상',
-      left: '잠재력 중심',
-      right: '수행 능력 중심',
-      leftSub: '역량 잠재치 위주 판단',
-      rightSub: '현장 수행 역량 중심 검증',
-      icon: BrainCircuit,
+      icon: BarChart3,
+      title: '고비용 / 저효율',
+      desc: '수억 원의 외부 컨설팅, 하지만 파일 속에 잠자는 결과물.',
     },
     {
-      title: '검증 방식',
-      left: '자기보고식',
-      right: '행동 시뮬레이션',
-      leftSub: '주관 응답 기반 평가',
-      rightSub: '상황 행동 기반 평가',
-      icon: Cpu,
+      icon: Database,
+      title: '데이터의 단절',
+      desc: '채용 때 본 검사와 입사 후 성과 지표가 따로 노는 현상.',
     },
     {
-      title: '예측 정확도',
-      left: '낮음 / 0.3',
-      right: '높음 / 0.7',
-      leftSub: '성과 연결성 낮음',
-      rightSub: '성과 예측 신뢰도 향상',
-      icon: Target,
+      icon: RefreshCcw,
+      title: '경직성',
+      desc: '비즈니스 환경은 매달 바뀌는데, 역량 정의는 5년 전 그대로인 모순.',
     },
   ]
-
-  const revealMask = `radial-gradient(circle 250px at ${spot.x}% ${spot.y}%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 55%, rgba(255,255,255,0) 100%)`
-  const inverseMask = `radial-gradient(circle 250px at ${spot.x}% ${spot.y}%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.04) 55%, rgba(255,255,255,1) 100%)`
 
   return (
     <section className="relative z-10 mx-auto mt-4 w-full max-w-6xl px-6 pb-8 pt-12 max-[359px]:pt-8 md:mt-6 lg:px-10 xl:px-[120px]">
@@ -530,112 +516,30 @@ function SpotlightRevealSection() {
           </span>
         </motion.div>
         <h2 className="mt-3 text-3xl font-bold text-white">
-          실무자가 실전에서 좋은 성과를 내게 하려면 어떻게 해야 할까요?
+          왜 80%의 기업이 역량 모델링 도입 후 1년 안에 포기할까요?
         </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-sm leading-[1.7] text-gray-400 sm:text-base sm:leading-[1.75]">
-          채용 시 우수했던 인재가 현장에서 기대 이하의 성과를 보이는 이유, 문제는 평가 방식에 있습니다.
-        </p>
       </motion.div>
 
-      <div
-        className="group relative overflow-hidden rounded-2xl border border-red-900/20 bg-[#070A13]/90 cursor-crosshair"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect()
-          const xPct = ((e.clientX - rect.left) / rect.width) * 100
-          const yPct = ((e.clientY - rect.top) / rect.height) * 100
-          setSpot({ x: xPct, y: yPct, active: true })
-        }}
-        onMouseEnter={(e) => {
-          setSpot({ x: 50, y: 50, active: true })
-        }}
-        onMouseLeave={() => setSpot((s) => ({ ...s, active: false }))}
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-15" />
-
-        <div className="relative p-5 md:p-8">
-          <div className="invisible grid gap-4 md:grid-cols-3">
-            <div className="md:col-span-3">
-              <p className="text-sm font-semibold tracking-[0.04em]">🔴 기존 방식</p>
-            </div>
-            {points.map((point) => (
-              <div key={`sizer-${point.title}`} className="rounded-xl border border-white/10 p-5">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full" />
-                  <p className="text-xs font-semibold tracking-[0.12em]">{point.title}</p>
-                </div>
-                <p className="text-2xl font-semibold">{point.left}</p>
-                <p className="mt-2 text-sm">{point.leftSub}</p>
+      <div className="grid gap-4 md:grid-cols-3">
+        {cards.map((card, i) => {
+          const Icon = card.icon
+          return (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#0E1424] shadow-[0_0_20px_rgba(59,130,246,0.35)]">
+                <Icon className="h-5 w-5 text-[#3B82F6]" />
               </div>
-            ))}
-          </div>
-
-          <div
-            className="pointer-events-none absolute top-0 left-0 h-full w-full"
-            style={{
-              WebkitMaskImage: inverseMask,
-              maskImage: inverseMask,
-              WebkitMaskRepeat: 'no-repeat',
-              maskRepeat: 'no-repeat',
-            }}
-          >
-            <div className="grid h-full gap-4 p-5 md:grid-cols-3 md:p-8">
-              <div className="md:col-span-3">
-                <p className="text-sm font-semibold tracking-[0.04em] text-red-500/60">🔴 기존 방식</p>
-              </div>
-              {points.map((point) => {
-                const Icon = point.icon
-                return (
-                  <div key={`dim-${point.title}`} className="rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                    <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#374151]/20">
-                        <Icon className="h-4 w-4 text-[#374151]" />
-                      </div>
-                      <p className="text-xs font-semibold tracking-[0.12em] text-[#374151]">{point.title}</p>
-                    </div>
-                    <p className="text-2xl font-semibold text-red-900/85">{point.left}</p>
-                    <p className="mt-2 text-sm text-[#374151]">{point.leftSub}</p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-
-          <div
-            className="pointer-events-none absolute top-0 left-0 h-full w-full"
-            style={{
-              WebkitMaskImage: revealMask,
-              maskImage: revealMask,
-              WebkitMaskRepeat: 'no-repeat',
-              maskRepeat: 'no-repeat',
-            }}
-          >
-            <div className="grid h-full gap-4 p-5 md:grid-cols-3 md:p-8">
-              <div className="md:col-span-3">
-                <p className="text-sm font-semibold tracking-[0.04em] text-[#3B82F6]">🔵 ASTRA (AI Solution)</p>
-              </div>
-              {points.map((point) => {
-                const Icon = point.icon
-                return (
-                  <div
-                    key={`bright-${point.title}`}
-                    className="rounded-xl border border-[#3B82F6]/30 bg-[#0b1428]/70 p-5 shadow-[0_0_26px_rgba(59,130,246,0.16)]"
-                  >
-                    <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#3B82F6]/25 shadow-[0_0_14px_rgba(59,130,246,0.5)]">
-                        <Icon className="h-4 w-4 text-[#3B82F6]" />
-                      </div>
-                      <p className="text-xs font-semibold tracking-[0.12em] text-white">{point.title}</p>
-                    </div>
-                    <p className="text-2xl font-semibold text-white">
-                      <span className="text-[#3B82F6]">{point.right}</span>
-                    </p>
-                    <p className="mt-2 text-sm text-white">{point.rightSub}</p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
+              <h3 className="text-brand-primary text-xs font-semibold uppercase tracking-[0.2em]">{card.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{card.desc}</p>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )
@@ -1352,7 +1256,7 @@ export default function Page() {
               type="button"
               className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-md shadow-[0_0_28px_rgba(59,130,246,0.35)] transition-all duration-300 ease-out hover:scale-[1.02] hover:border-[#356DF3] hover:bg-[#356DF3] hover:text-white sm:px-7 sm:py-3 sm:text-base"
             >
-              무료 진단 데모 보기
+              서비스 소개서 다운로드
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </motion.div>
@@ -1370,9 +1274,9 @@ export default function Page() {
 
       <SpotlightRevealSection />
       <FeatureFlow />
-      <ROICalculator />
-      <LiveAIDashboardSection />
-      <SocialProof />
+      {/* <ROICalculator /> */}
+      {/* <LiveAIDashboardSection /> */}
+      {/* <SocialProof /> */}
       <style jsx global>{`
         .hero-reflect-token {
           position: relative;

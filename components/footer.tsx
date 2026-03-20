@@ -10,7 +10,7 @@ const footerLinks = {
   company: [
     { label: "회사 소개", href: "/" },
     { label: "리서치", href: "/research" },
-    { label: "프로젝트 사례", href: "/cases" },
+    // { label: "프로젝트 사례", href: "/cases" },
     { label: "문의하기", href: "/inquiry" },
   ],
 }
