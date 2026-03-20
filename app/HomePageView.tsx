@@ -530,8 +530,10 @@ function SpotlightRevealSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md transition-all duration-300 hover:border-blue-500/30 hover:bg-white/[0.07] hover:shadow-[0_0_32px_rgba(59,130,246,0.18)]"
             >
+              {/* shimmer sweep */}
+              <div className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-full" />
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[#0E1424] shadow-[0_0_20px_rgba(59,130,246,0.35)]">
                 <Icon className="h-5 w-5 text-[#3B82F6]" />
               </div>
